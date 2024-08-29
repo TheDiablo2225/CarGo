@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AutoInsight</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fafafa;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: black;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            color:white;
+        }
+
+        nav {
+            background: rgb(5, 126, 242);
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: rgb(162, 182, 245);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background-color:black;
+            color: #333;
+        }
+
+        .contact-info, .contact-form {
+            margin-bottom: 40px;
+        }
+
+        .contact-info h2, .contact-form h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color:white;
+        }
+
+        .contact-info p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color:white;
+        }
+
+        .contact-form {
+            background-color: rgb(135, 164, 250);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: rgb(2, 19, 102);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: rgb(162, 182, 245);
+        }
+
+        footer {
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Contact Us</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="cargohomepage.html">Home</a>
+            <a href="cargouploadtxt.html">Upload PDF</a>
+	    <a href="#how-it-works">Upload Audio</a>
+            <a href="cargoaboutus.html">About Us</a>
+            <a href="cargocontact.html">Contact Us</a>
+
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p><strong>Email:</strong> <a href="mailto:cargogo@gmail.com">cargo@gmail.com</a></p>
+            <p><strong>Phone:</strong> +1 (234) 567-8901</p>
+            <p><strong>Address:</strong> 1234 Car Street, AutoCity, AC 56789</p>
+        </div>
+
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form action="submit_form.php" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+   
+</body>
+
+</html>

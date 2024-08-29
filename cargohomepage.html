@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoInsight - Car Sales Conversation Analyzer</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color:black;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background-color:black;
+            color:#fff;
+        }
+
+        header {
+            background:black;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        header p {
+            font-size: 1.4em;
+            margin-bottom: 0;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        nav {
+            background: rgb(5, 126, 242);
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: rgb(162, 182, 245);
+        }
+
+        .showcase {
+        
+          background: rgba(0, 0, 0, 0.3)url('https://i.pinimg.com/564x/80/34/a2/8034a29309e788189df4f41f42c0be45.jpg') no-repeat center center/cover;
+    color: #fff;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+        }
+
+        .showcase h2 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s ease-in-out;
+            color: #fff;
+        }
+
+        .showcase p {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .showcase button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: rgb(2, 19, 102);
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .showcase button:hover {
+            background-color: rgb(162, 182, 245);
+            color:#fff;
+        }
+
+        section {
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+            color:#fff;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .feature {
+            flex-basis: 30%;
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            animation: zoomIn 1s ease-in-out;
+        }
+
+        .feature h3 {
+            margin-bottom: 15px;
+            font-size: 1.6em;
+            color: #333;
+        }
+
+        .feature p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .info {
+            background-color:rgb(135, 164, 250);
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .info h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: rgb(2, 12, 87);
+        }
+
+        .info p {
+            font-size: 1.2em;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        footer {
+            background-color:white;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>CarGo!</h1>
+            <p>Unlock insights from car sales conversations to enhance your sales process.</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="cargohomepage.html">Home</a>
+            <a href="cargouploadtxt.html">Upload PDF</a>
+	    <a href="#how-it-works">Upload Audio</a>
+            <a href="cargoaboutus.html">About Us</a>
+            <a href="cargocontact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <section class="showcase">
+        <div class="container">
+            <h2>Analyze Conversations with Ease</h2>
+            <p>Extract key information from car sales conversations and improve your sales strategies.</p>
+            <button onclick="location.href='#contact'">Get Started</button>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <img src="https://i.pinimg.com/236x/25/21/e9/2521e91351ed1d7138d3a6121330af37.jpg" alt="Customer Requirements" />
+                    <h3>Customer Requirements Extraction</h3>
+                    <p>Easily identify and extract customer preferences such as car type, fuel type, and more.</p>
+                </div>
+                <div class="feature">
+                    <img src="https://i.pinimg.com/236x/58/73/e9/5873e96439cb48560239a6d1763d03bc.jpg" alt="Company Policies" />
+                    <h3>Company Policies Detection</h3>
+                    <p>Automatically detect and highlight key company policies discussed during sales conversations.</p>
+                </div>
+                <div class="feature">
+                    <img src="https://i.pinimg.com/236x/0a/c6/f4/0ac6f44324ea90f81f87a3177e0a625e.jpg" alt="Customer Objections" />
+                    <h3>Customer Objections Analysis</h3>
+                    <p>Analyze customer objections and concerns to address potential issues proactively.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="info" class="info">
+        <div class="container">
+            <h2 style="color:white" >General Information About Cars</h2>
+            <p>
+                Cars have evolved significantly over the past century. Modern cars come in various types, including sedans, SUVs, hatchbacks, and more.
+                Fuel types have also diversified, with options like petrol, diesel, electric, and hybrid vehicles. Understanding customer preferences and
+                staying updated on the latest trends in the automotive industry is crucial for success in car sales.
+            </p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2024 AutoInsight</p>
+            <p>Have questions? <a href="mailto:support@autoinsight.com">Contact Us</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>
